@@ -1,4 +1,4 @@
-export class LoginPage{
+export class loginPage{
 
     constructor(page){
         this.page = page;
@@ -6,6 +6,7 @@ export class LoginPage{
         this.usernameInput='#loginusername';
         this.passwordInput= '#loginpassword';
         this.loginButton='//button[normalize-space()="Log in"]';
+        this.logoutButton = "#logout2";
     }
 
     async gotoLoginPage(){
@@ -17,6 +18,9 @@ export class LoginPage{
         await this.page.locator(this.usernameInput).fill(username);
         await this.page.locator(this.passwordInput).fill(password);
         await this.page.locator(this.loginButton).click();
+    }
+    async logOutBtn(){
+        await this.page.locator(this.logoutButton).click();
     }
 
 }

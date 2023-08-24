@@ -1,4 +1,4 @@
-export class HomePage   {
+export class homePage   {
 
     constructor(page){
 

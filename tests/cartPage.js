@@ -1,8 +1,9 @@
-export class CartPage {
+export class cartPage {
 
     constructor(page){
         this.page= page;
         this.noOfProducts= '//tbody[@id="tbodyid"]/tr/td[2]'
+        this.removeItem = page.getByRole('link',{name:'Delete'});
 
     }
 
@@ -16,5 +17,9 @@ export class CartPage {
                //break;
             }
         }
+        
+    }
+    async removeProduct(){
+        await this.removeItem.click();
     }
 }
