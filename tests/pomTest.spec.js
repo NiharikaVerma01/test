@@ -21,7 +21,7 @@ test('Test case: using Page Object Model', async ({ page }) => {
       //HomePage
 
     const home = new homePage(page);
-    await home.addProductToCart("Nokia lumia 1520");
+    await home.addProductToCart("HTC One M9");
     await page.waitForTimeout(3000);
     await home.gotoCart();
 
@@ -29,7 +29,7 @@ test('Test case: using Page Object Model', async ({ page }) => {
 
     const cart = new cartPage(page);
     await page.waitForTimeout(3000)
-    const status = await cart.checkProductInCart('Nokia lumia 1520')
+    const status = await cart.checkProductInCart('HTC One M9')
     expect (status).toBe(true);
     await cart.removeProduct()
 

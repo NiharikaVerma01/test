@@ -3,7 +3,7 @@ export class cartPage {
     constructor(page){
         this.page= page;
         this.noOfProducts= '//tbody[@id="tbodyid"]/tr/td[2]'
-        this.removeItem = page.getByRole('link',{name:'Delete'});
+        this.removeItem = page.getByRole('link',{name:'Delete'}).nth(1);
 
     }
 

@@ -13,10 +13,14 @@ export class homePage   {
         for (const product of productList) {
             if (productName === await product.textContent()){
                 await product.click()
-            
                 break;
             }
         }
+        // wait for the "add to cart" button
+        await this.page.waitForSelector(this.addToCartbtn);
+
+       // await this.page.locator(this.addToCartbtn).click();
+
         await this.page.on('dailog', async dailog => {
             if(dailog.message().includes("added")){
                 await dailog.accept();

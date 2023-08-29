@@ -12,7 +12,7 @@ export class loginPage{
     }
 
     async gotoLoginPage(){
-        await this.page.goto('https://demoblaze.com/index.html');
+        await this.page.goto('/');
     }
     
     async login(){
