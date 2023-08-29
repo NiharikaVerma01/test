@@ -1,3 +1,5 @@
+import userData from "../data";
+
 export class loginPage{
 
     constructor(page){
@@ -13,10 +15,10 @@ export class loginPage{
         await this.page.goto('https://demoblaze.com/index.html');
     }
     
-    async login(username, password){
+    async login(){
         await this.page.locator(this.loginLink).click();
-        await this.page.locator(this.usernameInput).fill(username);
-        await this.page.locator(this.passwordInput).fill(password);
+        await this.page.locator(this.usernameInput).fill(userData.username);
+        await this.page.locator(this.passwordInput).fill(userData.password);
         await this.page.locator(this.loginButton).click();
     }
     async logOutBtn(){

@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
 
     const login = new loginPage(page);
     await login.gotoLoginPage();
-    await login.login('Niharika Verma','Testing');
+    await login.login();
     await page.waitForTimeout(3000);
 
   });
@@ -18,12 +18,7 @@ test.beforeEach(async ({ page }) => {
 test('Test case: using Page Object Model', async ({ page }) => {
     
 
-    const login = new loginPage(page);
-    await login.gotoLoginPage();
-    await login.login('Niharika Verma','Testing');
-    await page.waitForTimeout(3000);
-
-    //HomePage
+      //HomePage
 
     const home = new homePage(page);
     await home.addProductToCart("Nokia lumia 1520");
